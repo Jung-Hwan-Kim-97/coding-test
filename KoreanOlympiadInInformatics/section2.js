@@ -42,3 +42,65 @@
 //   return answer;
 // };
 // console.log("solution", solution([130, 135, 148, 140, 145, 150, 150, 153]));
+
+//3.가위 바위 보
+
+//A, B 두 사람이 가위바위보 게임을 합니다. 총 N번의 게임을 하여 A가 이기면 A를 출력하고, B가 이기면 B를 출력합니다. 비길 경우에는 D를 출력합니다. 가위, 바위, 보의 정보는 1:가위, 2:바위, 3:보로 정하겠습니다.
+
+// ▣ 입력설명
+// 첫 번째 줄에 게임 횟수인 자연수 N(1<=N<=100)이 주어집니다.
+// 두 번째 줄에는 A가 낸 가위, 바위, 보 정보가 N개 주어집니다.
+// 세 번째 줄에는 B가 낸 가위, 바위, 보 정보가 N개 주어집니다.
+
+// ▣ 출력설명
+// 각 줄에 각 회의 승자를 출력합니다. 비겼을 경우는 D를 출력합니다.
+
+// const solution = (gameCount, player1, player2) => {
+//   let answer;
+
+//   const result = [];
+//   for (let i = 0; i < gameCount; i++) {
+//     player1[i] === player2[i]
+//       ? result.push("D")
+//       : player1[i] - player2[i] === -2
+//       ? result.push("A")
+//       : player1[i] - player2[i] === 2
+//       ? result.push("B")
+//       : player1[i] > player2[i]
+//       ? result.push("A")
+//       : result.push("B");
+//   }
+
+//   answer = result;
+
+//   return answer;
+// };
+
+// console.log("solution", solution(5, [2, 3, 3, 1, 3], [1, 1, 2, 2, 3]));
+
+//4. 점수계산
+// OX 문제는 맞거나 틀린 두 경우의 답을 가지는 문제를 말한다. 여러 개의 OX 문제로 만들어진 시험에서 연속적으로 답을 맞히는 경우에는 가산점을 주기 위해서 다음과 같이 점수 계산을 하기로 하였다.
+// 1번 문제가 맞는 경우에는 1점으로 계산한다. 앞의 문제에 대해서는 답을 틀리다가답이 맞는 처음 문제는 1점으로 계산한다. 또한, 연속으로 문제의 답이 맞는 경우에서 두 번째문제는 2점, 세 번째 문제는 3점, ..., K번째 문제는 K점으로 계산한다. 틀린 문제는 0점으로 계산한다.
+
+// 시험문제의 채점 결과가 주어졌을 때, 총 점수를 계산하는 프로그램을 작성하시오.
+
+// ▣ 입력설명
+// 첫째 줄에 문제의 개수 N (1 ≤ N ≤ 100)이 주어진다. 둘째 줄에는 N개 문제의 채점 결과를 나타내는 0 혹은 1이 빈 칸을 사이에 두고 주어진다. 0은 문제의 답이 틀린 경우이고, 1은 문제의답이 맞는 경우이다.
+
+// const solution = (count, arr) => {
+//   let answer = 0;
+//   let consecutive = 0;
+
+//   for (let i = 0; i < count; i++) {
+//     if (arr[i] === 1) {
+//       consecutive++;
+//       answer += consecutive;
+//     } else {
+//       consecutive = 0;
+//     }
+//   }
+
+//   return answer;
+// };
+
+// console.log("solution", solution(10, [1, 0, 1, 1, 1, 0, 0, 1, 1, 0]));

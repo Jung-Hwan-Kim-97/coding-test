@@ -104,3 +104,102 @@
 // };
 
 // console.log("solution", solution(10, [1, 0, 1, 1, 1, 0, 0, 1, 1, 0]));
+
+// 5. 등수구하기
+
+// N(1<=N<=100)명의 학생의 국어점수가 입력되면 각 학생의 등수를 입력된 순서대로 출력하는 프로그램을 작성하세요.
+// ▣ 입력설명
+
+// 첫 줄에 N(3<=N<=1000)이 입력되고, 두 번째 줄에 국어점수를 의미하는 N개의 정수가 입력된다. 같은 점수가 입력될 경우 높은 등수로 동일 처리한다. 즉 가장 높은 점수가 92점인데 92점이 3명 존재하면 1등이 3명이고 그 다음 학생은 4등이 된다.
+
+// ▣ 출력설명
+// 입력된 순서대로 등수를 출력한다.
+
+// const solution = (count, arr) => {
+//   let answer = arr.map(() => 1);
+
+//   for (let i = 0; i < count; i++) {
+//     for (let j = 0; j < count; j++) {
+//       if (arr[i] < arr[j]) answer[i]++;
+//     }
+//   }
+
+//   return answer;
+// };
+
+// console.log(solution(5, [87, 89, 92, 100, 76]));
+
+// 6. 격자판 최대합
+
+// 5*5 격자판에 아래롸 같이 숫자가 적혀있습니다.N*N의 격자판이 주어지면 각 행의 합, 각 열의 합, 두 대각선의 합 중 가 장 큰 합을 출력합니다.
+
+// 10 13 10 12 15
+// 12 39 30 23 11
+// 11 25 50 53 15
+// 19 27 29 37 27
+// 19 13 30 13 19
+
+// ▣ 입력설명
+
+// 첫 줄에 자연수 N이 주어진다.(1<=N<=50) 두 번째 줄부터 N줄에 걸쳐 각 줄에 N개의 자연수가 주어진다. 각 자연수는 100을 넘지 않는다.
+
+// ▣ 출력설명
+// 최대합을 출력합니다.
+
+// const solution = (n, grid) => {
+//   let answer;
+
+//   let maxValue = 0;
+
+//   //열 최대값
+//   grid.forEach((row) => {
+//     const rowSum = row.reduce((acc, cur) => acc + cur, 0);
+
+//     if (rowSum > maxValue) maxValue = rowSum;
+//   });
+
+//   //행 최대값
+//   for (let i = 0; i < n; i++) {
+//     let columnSum = 0;
+
+//     for (let j = 0; j < n; j++) {
+//       columnSum += grid[j][i];
+//     }
+
+//     if (columnSum > maxValue) maxValue = columnSum;
+//   }
+
+//   //첫번째 대각선 최대값
+
+//   let diagonal1Sum = 0;
+
+//   grid.forEach((item, i) => {
+//     diagonal1Sum += item[i];
+
+//     if (diagonal1Sum > maxValue) maxValue = diagonal1Sum;
+//   });
+
+//   //두번째 대각선 최대값
+
+//   let diagonal2Sum = 0;
+
+//   grid.forEach((item, i) => {
+//     diagonal2Sum += item[n - i - 1];
+
+//     if (diagonal2Sum > maxValue) maxValue = diagonal2Sum;
+//   });
+
+//   answer = maxValue;
+
+//   return answer;
+// };
+
+// console.log(
+//   solution(5, [
+//     [10, 13, 10, 12, 15],
+//     [12, 39, 30, 23, 11],
+//     [11, 25, 50, 53, 15],
+//     [19, 27, 29, 37, 27],
+//     [19, 13, 30, 13, 19],
+//   ])
+// );
